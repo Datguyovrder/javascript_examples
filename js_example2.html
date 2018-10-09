@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JS Example</title>
+</head>
+<body>
+  <h1>JS Example</h1>
+  <script type="text/javascript">
+    function equalityCheck(x) {
+      return x===10 ? "equal" : "not equal"
+    }
+
+    console.log(equalityCheck(10))
+    console.log(equalityCheck(5))
+
+    function falseyValues() {
+      var x=3
+      if (x === null) {
+        x++
+      }
+      else if (x === false){
+        x++
+      }
+      else if (x === 0){
+        x++
+      }
+      else if (x === "") {
+        x++
+      }
+
+      return x
+    }
+
+    falseyValues()
+
+    function printLyrics() {
+      console.log("Now this is a story all about how")
+      console.log("My life got flipped turned upside down")
+      console.log("And I'd like to take a minute, just sit right there")
+      console.log("I'll tell you how I became the prince of a town called Bel-Air")
+    }
+
+    printLyrics()
+
+    let x = 100
+    function scope(n) {
+      var x = 1
+      return n + x
+    }
+
+    console.log(x)
+    console.log(scope(5))
+    console.log(x)
+
+    function Boat(name, color, price) {
+      this.name = name
+      this.color = color
+      this.price = price
+      this.newColor = function(c) {
+        return this.color = c
+      }
+    }
+
+    var boat = new Boat("S. S. Minnow", "white", 20000 )
+    console.log(boat)
+    console.log(boat.name)
+    console.log(boat.color)
+    boat.newColor = "red"
+    console.log(boat.color)
+  </script>
+</body>
+</html>

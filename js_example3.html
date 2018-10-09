@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JS Example</title>
+</head>
+<body>
+  <h1>JS Example</h1>
+  <script type="text/javascript">
+    function selectEvenItems(arr) {
+      var res = [];
+      for (var i=0; i<arr.length; i+=2) {
+        res.push(arr[i]);
+      }
+
+      return res;
+    }
+
+    console.log(selectEvenItems(["a", "b", "c", "d", "e", "f"]));
+
+    function maxNum(arr) {
+      return Math.max(...arr);
+    }
+
+    console.log(maxNum([5, 4, 8, 1, 2]));
+
+    function factorial(n) {
+      if (n===0) {
+        return 1;
+      }
+      else {
+        return n * factorial(n-1);
+      }
+    }
+
+    console.log(factorial(5));
+
+    function desc(arr) {
+      var result = [];
+
+      for (var i=arr.length-1; i>=0; i--) {
+        result.push(arr[i]);
+      }
+
+      return result;
+    }
+
+    console.log(desc([1, 3, 5, 7]))
+
+    
+  </script>
+</body>
+</html>

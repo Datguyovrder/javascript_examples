@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JavaScript Example</title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <style type="text/css">
+    .hidden {
+      display: none;
+    }
+
+    h1 {
+      padding-left: 100px;
+    }
+
+    .red {
+      color: red;
+    }
+
+    .blue {
+      color: blue;
+    }
+  </style>
+</head>
+<body>
+  <h1 onclick="toggleParagraph()">Alexander Hamilton</h1>
+  <p class="hidden">Alexander Hamilton (January 11, 1755 or 1757 – July 12, 1804) was an American statesman and one of the Founding Fathers of the United States. He was an influential interpreter and promoter of the U.S. Constitution, as well as the founder of the nation's financial system, the Federalist Party, the United States Coast Guard, and The New York Post newspaper.</p>
+  
+  <!-- <p>The x coordinate is: <span class="x-coordinate">unknown...</span></p>
+  <p>The y coordinate is: <span class="y-coordinate">unknown...</span></p> -->
+
+  <button onclick="changeHeader()" type="button" class="btn btn-primary">Change Header</button>
+  <button onclick="styleAllParagraphs()" type="button" class="btn btn-primary">Change Paragraph</button>
+
+  <p onclick="changeParagraph(this)">paragraph 1</p>
+  <p onclick="changeParagraph(this)">paragraph 2</p>
+  <p onclick="changeParagraph(this)">paragraph 3</p>
+
+  <script>
+    // function doSomething() {
+    //   console.log("You clicked on the header twice!");
+    // }
+
+    // function doSomething2() {
+    //   console.log("You clicked on the paragraph!");
+    // }
+
+    // function doSomething3() {
+    //   console.log("You moused over the h1 tag!");
+    // }
+
+    function toggleParagraph() {
+      // var x = event.clientX;
+      // var y = event.clientY;
+
+      // var xTag = document.querySelector('.x-coordinate');
+      // var yTag = document.querySelector('.y-coordinate');
+      
+      // xTag.innerText = x;
+      // yTag.innerText = y;
+    
+      var pTag = document.querySelector('p');
+      // if (pTag.classList.contains("hidden")) {
+      //   pTag.classList.remove('hidden');
+      // } else {
+      //   pTag.classList.add('hidden');
+      // }
+
+      pTag.classList.toggle('hidden');
+    }
+
+    function changeHeader() {
+      var hTag = document.querySelector('h1');
+      var hexColorStr = "#";
+      var chars = "0123456789ABCDEF";
+
+      for (var i=0; i<6; i++) {
+        var index = Math.floor(Math.random() * 16 + 0);
+        // console.log(chars[index])
+        hexColorStr += chars[index];
+        // console.log(hexColorStr)
+      }
+
+      hTag.style.color = hexColorStr;
+    }
+
+    function changeParagraph(pTag) {
+      pTag.classList.toggle('red');
+    }
+
+    function styleAllParagraphs() {
+      var pTags = document.querySelectorAll('p');
+      pTags.forEach(function(pTag) {
+        pTag.classList.toggle('blue');
+      });
+    }
+  </script>
+</body>
+</html>
